@@ -12,12 +12,16 @@ public class ActorList {
 		//Scanner inFile = new Scanner(new java.io.File("s01e01-cast.txt";
 		Scanner inFile = new Scanner((new java.net.URL(url)).openStream());
 		
+		int counter = 0;
+		
 		while (inFile.hasNext()) {
 			Actor a = getActor(inFile);
 			System.out.print(a.name + " was born on " + a.birthdate);
 			System.out.println(" and played " + a.role);
+			counter++;
 		}
 		inFile.close();
+		System.out.println(counter + " records were processed.");
 	}
 	
 	public static Actor getActor(Scanner input) {
